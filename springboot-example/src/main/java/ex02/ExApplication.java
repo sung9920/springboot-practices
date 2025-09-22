@@ -1,12 +1,13 @@
-package ex01;
+package ex02;
 
 import java.util.Map;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 public class ExApplication {
@@ -16,22 +17,21 @@ public class ExApplication {
 		return Map.of("greeting", "hello, world");
 	}
 
+	@RestController
+	public static class MyController {
+		@GetMapping("/hello")
+		public String hello() {
+			return "hello, world";
+		}
+	}
+
 	public static void main(String[] args) {
-
-//		ConfigurableApplicationContext ac = null;
-//		try {
-//			ac = SpringApplication.run(ExApplication.class, args);
-//			System.out.println(ac.getBean("myMap", Map.class).get("greeting"));
-//		} catch (Exception ignore) {
-//		} finally {
-//			ac.close();
-//		}
-
 		try(ConfigurableApplicationContext ac = SpringApplication.run(ExApplication.class, args)) {
-			System.out.println(ac.getBean("myMap", Map.class).get("greeting"));
 		} catch (Exception ignore) {
 		}
 
+		SpringApplication.run(ExApplication.class, args);
 	}
+
 
 }
