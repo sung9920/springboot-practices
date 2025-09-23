@@ -4,5 +4,4 @@ import org.springframework.stereotype.Component;
 
 @Component("MyComponent")
 public class MyComponent {
-
 }

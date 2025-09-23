@@ -10,7 +10,7 @@ import ex02.component.MyComponent;
 
 @SpringBootTest
 public class MyApplicationTest {
-
+	
 	@Test
 	public void testMyComponentNotNull(ApplicationContext applicationContext) {
 		MyComponent myComponent = applicationContext.getBean("MyComponent", MyComponent.class);

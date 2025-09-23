@@ -7,16 +7,14 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootConfiguration
 public class MyApplication01 {
-
+	
 	@Bean
 	public MyComponent myComponent01() {
 		return new MyComponent();
 	}
-
+	
 	public static void main(String[] args) {
-		try(ConfigurableApplicationContext ac = SpringApplication.run(MyApplication01.class, args)) {
-
-		}
+		try(ConfigurableApplicationContext ac = SpringApplication.run(MyApplication01.class, args)){}
 	}
 
 }
