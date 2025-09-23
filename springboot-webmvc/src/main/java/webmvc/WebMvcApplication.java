@@ -8,5 +8,4 @@ public class WebMvcApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(WebMvcApplication.class, args);
 	}
-
 }
